@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitest/config';
 
-export default ({
+export default defineConfig({
     test: {
         globals: true,
-        enviroment: 'deno'
+        environment: 'deno'
     }
 })
