@@ -62,13 +62,3 @@ describe('encode', () => {
         expect(result).toBe('a');
     })
 })
-
-/*
-
-para o encode('a', -1) retorna "z"
-
-preciso implementar aritmetica modular em cima do alfabeto
-
-o resto um numero 
-
-*/
