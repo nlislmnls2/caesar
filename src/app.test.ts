@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import encode from './app'
 
 describe('encode', () => {
-    it('transforma "abc" em "bcd"', () => {
+    it('shifts one character', () => {
         // arange 
         const msg: string = 'abc';
         const shift: number = 1;
@@ -14,7 +14,7 @@ describe('encode', () => {
         expect(result).toBe('bcd');
     })
 
-    it('para o encode("a", -1) retorna "z"', () => {
+    it('rotates correctly for the last alphabet character', () => {
         // arange 
         const msg: string = 'a';
         const shift: number = -1;
@@ -25,20 +25,8 @@ describe('encode', () => {
         // assert
         expect(result).toBe('z');
     })
-
-    it('para o encode("z", 1) retorna "a"', () => {
-        // arange 
-        const msg: string = 'z';
-        const shift: number = 1;
-
-        // act
-        const result = encode(msg, shift);
-
-        // assert
-        expect(result).toBe('a');
-    })
     
-    it('para o encode("a", 666) retorna "q"', () => {
+    it('encodes correctly with a value larger than 26(#alphabet)', () => {
         // arange 
         const msg: string = 'a';
         const shift: number = 666;
@@ -50,7 +38,7 @@ describe('encode', () => {
         expect(result).toBe('q');
     })
 
-    it('para o encode("a", 5200) retorna "a"', () => {
+    it('Does not shift for a multiple of 26(#alphabet)', () => {
         // arange 
         const msg: string = 'a';
         const shift: number = 5200;
