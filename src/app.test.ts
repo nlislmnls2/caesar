@@ -25,6 +25,18 @@ describe('encode', () => {
         // assert
         expect(result).toBe('z');
     })
+
+    it('rotates correctly for the first alphabet character', () => {
+        // arange 
+        const msg: string = 'z';
+        const shift: number = 1;
+
+        // act
+        const result = encode(msg, shift);
+
+        // assert
+        expect(result).toBe('a');
+    })
     
     it('encodes correctly with a value larger than 26(#alphabet)', () => {
         // arange 
